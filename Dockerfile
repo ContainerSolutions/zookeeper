@@ -6,7 +6,7 @@ RUN apt-get update \
 RUN mkdir /tmp/zookeeper
 WORKDIR /tmp/zookeeper
 RUN git clone https://github.com/apache/zookeeper.git .
-RUN git checkout release-3.5.0
+RUN git checkout release-3.5.1-rc2
 RUN ant jar
 RUN cp /tmp/zookeeper/conf/zoo_sample.cfg /tmp/zookeeper/conf/zoo.cfg
 RUN echo "standaloneEnabled=false" >> /tmp/zookeeper/conf/zoo.cfg
