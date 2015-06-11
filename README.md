@@ -1,6 +1,6 @@
 #Zookeeper
 
-This Docker image contains Zookeeper 3.5.0(-alpha?) which features dynamic host reconfiguration. Upon start, it attempts to join an existing cluster.
+This Docker image contains Zookeeper 3.5.1-rc2 which features dynamic host reconfiguration. Upon start, it attempts to join an existing cluster.
 
 The syntax to start a container is like this:
 
