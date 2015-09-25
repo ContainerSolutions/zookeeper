@@ -4,7 +4,7 @@ MYID=$1
 ZK=$2
 
 HOSTNAME=`hostname`
-IPADDRESS=`grep $HOSTNAME /etc/hosts | awk {'print $1'}`
+IPADDRESS=`ip -4 addr show scope global dev eth0 | grep inet | awk '{print \$2}' | cut -d / -f 1`
 cd /tmp/zookeeper
 
 if [ -n "$ZK" ] 
