@@ -1,15 +1,13 @@
 #Zookeeper
 
-This Docker image contains Zookeeper 3.5.1-rc2 which features dynamic host reconfiguration. Upon start, it attempts to join an existing cluster.
+This Docker image contains Zookeeper 3.5.1 which features dynamic host reconfiguration. Upon start, it attempts to join an existing cluster.
 
 The syntax to start a container is like this:
 
-  `docker run --net host --name [name] containersol/zookeeper [id] [ip]`
+  `docker run -p 2181:2181 -p 2888:2888 -p 3888:3888 --name [name] containersol/zookeeper [ip]`
   
 where 
-  - `id` = id of the zookeeper node (known internally as myid)
   - `ip` = ip address of a node of the existing cluster
   
-The `id` is mandatory, the `ip` is optional.
+You don't need to supply `ip` for the first (or only) node in a cluster.
 
-The `--net host` is needed for zookeepers on different hosts to be able to contact each other.
