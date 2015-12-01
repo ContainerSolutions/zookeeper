@@ -6,7 +6,7 @@ RUN apt-get update \
 RUN mkdir /tmp/zookeeper
 WORKDIR /tmp/zookeeper
 RUN git clone https://github.com/apache/zookeeper.git .
-RUN git checkout release-3.5.1-rc2
+RUN git checkout release-3.5.1
 RUN ant jar
 ADD zoo.cfg /tmp/zookeeper/conf/
 ADD zk-init.sh /usr/local/bin/
